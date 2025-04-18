@@ -1,20 +1,20 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react'; // Импортируем необходимые функции и хуки из React
 
-// Создаем контекст
-const ThemeContext = createContext();
+// Создаем контекст для темы
+const ThemeContext = createContext(); // Создаем новый контекст
 
-// Провайдер контекста
+// Провайдер контекста для управления темой
 export const ThemeProvider = ({ children }) => {
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(false); // Состояние для отслеживания текущей темы (темная или светлая)
 
     // Функция для переключения темы
     const toggleTheme = () => {
-        setIsDarkTheme(prevTheme => !prevTheme);
+        setIsDarkTheme(prevTheme => !prevTheme); // Переключаем состояние темы на противоположное
     };
 
-    // Эффект для изменения классов body
+    // Эффект для изменения классов body в зависимости от текущей темы
     useEffect(() => {
-        const body = document.body;
+        const body = document.body; // Получаем элемент body документа
         if (isDarkTheme) {
             body.classList.add('dark-theme'); // Добавляем класс для темной темы
             body.classList.remove('light-theme'); // Убираем класс для светлой темы
@@ -22,17 +22,17 @@ export const ThemeProvider = ({ children }) => {
             body.classList.add('light-theme'); // Добавляем класс для светлой темы
             body.classList.remove('dark-theme'); // Убираем класс для темной темы
         }
-    }, [isDarkTheme]);
+    }, [isDarkTheme]); // Эффект срабатывает при изменении isDarkTheme
 
-    // Возвращаем провайдер контекста
+    // Возвращаем провайдер контекста с доступными значениями
     return (
         <ThemeContext.Provider value={{ isDarkTheme, toggleTheme }}>
-            {children}
+            {children} {/* Отображаем дочерние компоненты */}
         </ThemeContext.Provider>
     );
 };
 
-// Хук для доступа к контексту
+// Хук для доступа к контексту темы из других компонентов
 export const useTheme = () => {
-    return useContext(ThemeContext);
+    return useContext(ThemeContext); // Используем useContext для получения значения из ThemeContext
 };

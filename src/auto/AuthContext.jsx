@@ -8,7 +8,8 @@ export const AuthProvider = ({ children }) => {
     const [userEmail, setUserEmail] = useState(""); // Хранит адрес электронной почты текущего аутентифицированного пользователя
 
     const login = async (email, password) => { // Функция для входа пользователя
-        const response = await fetch(`http://localhost:5000/users?email=${email}&password=${password}`); // Запрос на сервер для проверки учетных данных
+        const response = await fetch(`http://localhost:5000/users?email=${email}&password=${password}`); // Запрос на сервер 
+        // для проверки учетных данных
         
         if (response.ok) { // Если ответ от сервера успешный
             const users = await response.json(); // Получаем список пользователей
@@ -33,7 +34,8 @@ export const AuthProvider = ({ children }) => {
     };
 
     const register = async (email, password) => { // Функция для регистрации нового пользователя
-        const checkResponse = await fetch(`http://localhost:5000/users?email=${email}`); // Проверяем, существует ли пользователь с таким email
+        const checkResponse = await fetch(`http://localhost:5000/users?email=${email}`); // Проверяем, существует ли пользователь 
+        // с таким email
         
         if (checkResponse.ok) { // Если ответ от сервера успешный
             const existingUsers = await checkResponse.json(); // Получаем список существующих пользователей

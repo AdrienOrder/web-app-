@@ -1,6 +1,24 @@
 {
   "users": [
+    {
+      "id": "e598",
+      "email": "hhh@gmail.com",
+      "password": "hhh"
+    },
+    {
+      "id": "8aa0",
+      "email": "hhh@gmail.com",
+      "nickname": "fejrhre",
+      "age": "33",
+      "description": "кккк"
+    },
+    {
+      "id": "4ee2",
+      "email": "hhh@gmail.com",
+      "nickname": "fejrhre",
+      "age": "33",
+      "description": "кккк"
+    }
   ],
-  "feedback": [
-  ]
+  "feedback": []
 }

@@ -42,8 +42,10 @@ const Content = () => { // Основной компонент Content
                 <Col> {/* Колонка для содержимого */}
                     {isAuthenticated ? ( // Проверяем, аутентифицирован ли пользователь
                         <Routes> {/* Определяем маршруты */}
-                            {labWorks.map((lab) => ( // Проходим по массиву labWorks и создаем маршрут для каждой лабораторной работы
-                                <Route key={lab.id} path={`/lab${lab.id}`} element={<LabWork lab={lab} />} /> // Создаем маршрут для каждой лабораторной работы
+                            {labWorks.map((lab) => ( // Проходим по массиву labWorks и создаем маршрут для каждой лабораторной 
+                            // работы
+                                <Route key={lab.id} path={`/lab${lab.id}`} element={<LabWork lab={lab} />} /> // Создаем маршрут 
+                                // для каждой лабораторной работы
                             ))}
                             <Route path="/home" element={<Home />} /> {/* Маршрут для главной страницы */}
                             <Route path="/about" element={<About />} /> {/* Маршрут для страницы "О нас" */}

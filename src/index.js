@@ -1,13 +1,13 @@
-import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React, { StrictMode } from 'react'; // Импортируем React и компонент StrictMode
+import ReactDOM from 'react-dom/client'; // Импортируем ReactDOM для работы с корневым элементом
+import App from './App'; // Импортируем основной компонент приложения App
 
-// Получаем корневой элемент
+// Получаем корневой элемент из DOM по ID 'root'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Рендерим приложение
+// Рендерим приложение в корневом элементе
 root.render(
-    <StrictMode>
-        <App />
+    <StrictMode> {/* Оборачиваем приложение в StrictMode для выявления потенциальных проблем */}
+        <App /> {/* Отображаем основной компонент приложения */}
     </StrictMode>
 );

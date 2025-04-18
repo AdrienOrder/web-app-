@@ -14,7 +14,8 @@ const UserProfile = () => {
 
     // Эффект для загрузки данных профиля из localStorage при монтировании компонента
     useEffect(() => {
-        const savedProfile = JSON.parse(localStorage.getItem('userProfile')); // Получаем сохраненные данные профиля из localStorage
+        const savedProfile = JSON.parse(localStorage.getItem('userProfile')); // Получаем сохраненные данные профиля 
+        // из localStorage
         if (savedProfile) { // Если данные существуют
             setNickname(savedProfile.nickname); // Устанавливаем псевдоним из сохраненных данных
             setAge(savedProfile.age); // Устанавливаем возраст из сохраненных данных
@@ -37,7 +38,8 @@ const UserProfile = () => {
                 headers: {
                     'Content-Type': 'application/json', // Указываем тип контента как JSON
                 },
-                body: JSON.stringify({ email: userEmail, nickname, age, description }), // Формируем тело запроса с данными профиля и email пользователя
+                body: JSON.stringify({ email: userEmail, nickname, age, description }), // Формируем тело запроса 
+                // с данными профиля и email пользователя
             });
 
             if (!response.ok) { // Если ответ сервера не успешный (ошибка)
@@ -46,7 +48,8 @@ const UserProfile = () => {
 
             alert('Профиль сохранен!'); // Выводим сообщение об успешном сохранении
 
-            localStorage.setItem('userProfile', JSON.stringify({ nickname, age, description })); // Сохраняем профиль в localStorage для дальнейшего использования
+            localStorage.setItem('userProfile', JSON.stringify({ nickname, age, description })); // Сохраняем профиль 
+            // в localStorage для дальнейшего использования
             setIsEditing(false); // Закрываем форму редактирования после успешного сохранения
         } catch (error) {
             console.error(error); // Логируем ошибку в консоль для отладки
@@ -65,7 +68,8 @@ const UserProfile = () => {
                     <div className="mt-3">
                         {nickname && <p><strong>Псевдоним:</strong> {nickname}</p>} {/* Если псевдоним существует, отображаем его */}
                         {age && <p><strong>Возраст:</strong> {age}</p>} {/* Если возраст существует, отображаем его */}
-                        {description && <p><strong>Описание деятельности:</strong> {description}</p>} {/* Если описание существует, отображаем его */}
+                        {description && <p><strong>Описание деятельности:</strong> {description}</p>} {/* Если описание существует, 
+                        отображаем его */}
                     </div>
 
                     {/* Отображаем форму для редактирования профиля */}
@@ -104,15 +108,18 @@ const UserProfile = () => {
                                 />
                             </div>
                             <button type="submit" className="btn btn-primary">Сохранить изменения</button> {/* Кнопка для сохранения профиля */}
-                            <button type="button" onClick={() => setIsEditing(false)} className="btn btn-secondary ms-2">Отмена</button> {/* Кнопка отмены редактирования */}
+                            <button type="button" onClick={() => setIsEditing(false)} className="btn btn-secondary ms-2">Отмена</button> 
+                            {/* Кнопка отмены редактирования */}
                         </form>
                     ) : (
                         <>
                             {/* Кнопка для редактирования профиля */}
                             {!nickname ? (  /* Если псевдоним отсутствует */
-                                <button onClick={() => setIsEditing(true)} className="btn btn-warning mt-3">Создать профиль</button> /* Кнопка создания профиля */
+                                <button onClick={() => setIsEditing(true)} className="btn btn-warning mt-3">Создать профиль</button> 
+                                /* Кнопка создания профиля */
                             ) : (
-                                <button onClick={() => setIsEditing(true)} className="btn btn-warning mt-3">Редактировать профиль</button> /* Кнопка редактирования профиля */
+                                <button onClick={() => setIsEditing(true)} className="btn btn-warning mt-3">Редактировать профиль</button> 
+                                /* Кнопка редактирования профиля */
                             )}
                         </>
                     )}
