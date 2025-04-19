@@ -11,14 +11,13 @@
       "nickname": "fejrhre",
       "age": "33",
       "description": "кккк"
-    },
-    {
-      "id": "4ee2",
-      "email": "hhh@gmail.com",
-      "nickname": "fejrhre",
-      "age": "33",
-      "description": "кккк"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "id": "8144",
+      "name": "jhvrkjhvkrjhvkrjhvkjrhvjhvrkjrhvjrhvk",
+      "feedback": "tyjfjjxfjg"
+    }
+  ]
 }
